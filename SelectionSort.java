@@ -1,25 +1,21 @@
 import java.util.*;
 
-public class BubbleSort {
-    public static void bubbleSort(int[] array){
-        int n = array.length;
-        boolean result;
+public class SelectionSort {
+    public static void selectionSort(int[] array){
 
-        for(int i = 0; i < n - 1; i++){
-            result = false;
+        int n=array.length;
 
-            for(int j = 0; j < n - 1 - i; j++){
-                if(array[j] > array[j+1]){
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                    result = true;
+        for(int i = 0;i < n - 1;i++){
+            int min = i;
+            for(int j = i + 1;j < n;j++){
+                if(array[j] < array[min]){
+                    min = j;
                 }
             }
 
-            if(!result){
-                break;
-            }
+            int temp = array[i];
+            array[i] = array[min];
+            array[min] = temp;
         }
     }
 
@@ -28,7 +24,7 @@ public class BubbleSort {
         System.out.println("ソート前: " + Arrays.toString(array));
         
         long startTime = System.nanoTime(); // 実行時間計測開始
-        bubbleSort(array);
+        selectionSort(array);
         long endTime = System.nanoTime(); // 実行時間計測終了
         
         System.out.println("ソート後: " + Arrays.toString(array));
