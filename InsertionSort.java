@@ -7,11 +7,11 @@ public class InsertionSort {
 
         for(int i = 1;i < n;i++){
             
-            int key = array[i];
+            int key = array[i]; //フォーカスする値を決める
             int pre = i - 1;
 
             while(pre >= 0 && array[pre] > key){
-                array[pre + 1] = array[pre];
+                array[pre + 1] = array[pre]; //コピーする
                 pre--;
             }
 

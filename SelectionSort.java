@@ -6,13 +6,14 @@ public class SelectionSort {
         int n=array.length;
 
         for(int i = 0;i < n - 1;i++){
-            int min = i;
+            int min = i; //とりあえず最小値
             for(int j = i + 1;j < n;j++){
                 if(array[j] < array[min]){
                     min = j;
                 }
             }
 
+            //最終的な最小値をスワップする
             int temp = array[i];
             array[i] = array[min];
             array[min] = temp;

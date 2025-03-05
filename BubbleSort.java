@@ -6,9 +6,9 @@ public class BubbleSort {
         boolean result;
 
         for(int i = 0; i < n - 1; i++){
-            result = false;
+            result = false; //入れ替えが発生しない場合は終了する
 
-            for(int j = 0; j < n - 1 - i; j++){
+            for(int j = 0; j < n - 1 - i; j++){ //終わった部分を省くため-iとする
                 if(array[j] > array[j+1]){
                     int temp = array[j];
                     array[j] = array[j + 1];
